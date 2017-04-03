@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"/WEB-INF/struts-2.0.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default,json-default">
+		<interceptors>
+        <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor">
+        <param name="enableSMD">true</param>
+        <param name="root">packageId</param>
+        </interceptor>
+  	    </interceptors>
+		<action name="SearchAction" class="com.mycompany.action.SearchAction">
+			<result name="success" type="json" />
+		</action>
+		<action name="FileListAction" class="com.mycompany.action.FileListAction">
+			<result name="success" type="json" />
+		</action>
+		<action name="FlumeSaveAction" class="com.mycompany.action.FlumeSaveAction">
+			<result name="success">/flume.jsp</result>
+		</action>
+		<action name="HDFSFileListAction" class="com.mycompany.action.HDFSFileListAction">
+			<result name="success" type="json" />
+		</action>
+		<action name="HiveSaveAction" class="com.mycompany.action.HiveSaveAction">
+			<result name="success">/home.jsp</result>
+		</action>
+		<action name="ClusteringAction" class="com.mycompany.action.ClusteringAction">
+			<result name="success" type="json" />
+		</action>
+		<action name="ResponseAction" class="com.mycompany.action.ResponseAction">
+			<result name="success" type="json" />
+		</action>
+		
+	</package>
+</struts>
